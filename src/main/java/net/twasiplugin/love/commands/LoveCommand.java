@@ -42,15 +42,20 @@ public class LoveCommand extends TwasiPluginCommand {
             return false;
         }
 
-        UserDTO resolvedUser;
+        boolean checkOthers = e.getArgs().size() >= 2;
+
+        UserDTO resolvedUser, resolvedSecondUser = null;
         try {
-            resolvedUser = helix().users().getUsers(null, new String[]{e.getArgs().get(0)}, new TwitchRequestOptions().withAuth(user.getTwitchAccount().toAuthContext())).get(0);
+            String[] names = (checkOthers) ? new String[]{e.getArgs().get(0), e.getArgs().get(1)} : new String[]{e.getArgs().get(0)};
+            List<UserDTO> users = helix().users().getUsers(null, names, new TwitchRequestOptions().withAuth(user.getTwitchAccount().toAuthContext()));
+            resolvedUser = users.get(0);
+            if (checkOthers) resolvedSecondUser = users.get(1);
         } catch (Exception ex) {
             e.reply(renderer.render("love.error.notfound"));
             return false;
         }
 
-        LoveEntity byTwitchIds = repo.getByTwitchIds(user, e.getSender().getTwitchId(), resolvedUser.getId());
+        LoveEntity byTwitchIds = repo.getByTwitchIds(user, (checkOthers) ? resolvedSecondUser.getId() : e.getSender().getTwitchId(), resolvedUser.getId());
         renderer.bindObject("entity", byTwitchIds);
 
         float num = byTwitchIds.getNumber() * 1f;

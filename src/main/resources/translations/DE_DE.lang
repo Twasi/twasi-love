@@ -1,4 +1,4 @@
-syntax={sender.displayName}, um die Liebe zwischen dir und einer Person zu ermitteln nutze !love [name] <3
+syntax={sender.displayName}, um die Liebe zwischen dir und einer Person zu ermitteln nutze !love [Name] (zweiter Name) <3
 
 love.answers.cloud={entity.account1.displayName} und {entity.account2.displayName} sind auf Wolke {cloud} {emote}
 love.answers.percent={entity.account1.displayName} und {entity.account2.displayName} lieben sich zu {entity.number}% {emote}

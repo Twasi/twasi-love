@@ -55,7 +55,12 @@ public class LoveCommand extends TwasiPluginCommand {
             return false;
         }
 
-        LoveEntity byTwitchIds = repo.getByTwitchIds(user, (checkOthers) ? resolvedSecondUser.getId() : e.getSender().getTwitchId(), resolvedUser.getId());
+        LoveEntity byTwitchIds = repo.getByTwitchIdsAndSkipResolve(
+                (checkOthers) ? resolvedSecondUser.getId() : e.getSender().getTwitchId(),
+                resolvedUser.getId(),
+                (checkOthers) ? resolvedSecondUser.getDisplayName() : e.getSender().getDisplayName(),
+                resolvedUser.getDisplayName()
+        );
         renderer.bindObject("entity", byTwitchIds);
 
         float num = byTwitchIds.getNumber() * 1f;
@@ -69,7 +74,7 @@ public class LoveCommand extends TwasiPluginCommand {
         String emote = cryEmotes.get(0);
         if (byTwitchIds.getNumber() >= 20) emote = normalEmotes.get(0);
         if (byTwitchIds.getNumber() >= 70) emote = loveEmotes.get(0);
-        renderer.bind("emote", emote);
+        renderer.bind("emote", emote).bindObject("account1", byTwitchIds.getAccount1()).bindObject("account2", byTwitchIds.getAccount2()).bindObject("number", byTwitchIds.getNumber());
 
         e.reply(renderer.render(byTwitchIds.getLoveAnswer().getKey()));
         return true;

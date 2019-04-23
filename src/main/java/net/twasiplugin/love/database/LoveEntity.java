@@ -71,6 +71,14 @@ public class LoveEntity extends BaseEntity {
         return account2;
     }
 
+    public void setAccount1(TwitchAccount account1) {
+        this.account1 = account1;
+    }
+
+    public void setAccount2(TwitchAccount account2) {
+        this.account2 = account2;
+    }
+
     public void resolve(User resolvingUser) {
         List<UserDTO> users = helix().users().getUsers(new String[]{twitchId1, twitchId2}, null, new TwitchRequestOptions().withAuth(resolvingUser.getTwitchAccount().toAuthContext()));
         UserDTO user1 = users.get(0);

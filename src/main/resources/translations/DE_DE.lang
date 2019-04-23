@@ -1,13 +1,15 @@
-syntax={sender.displayName}, um die Liebe zwischen dir und einer Person zu ermitteln nutze !love [Name] (zweiter Name) <3
+syntax={sender}, um die Liebe zwischen dir und einer Person zu ermitteln nutze !love [Name] (zweiter Name) <3
 
-love.answers.cloud={entity.account1.displayName} und {entity.account2.displayName} sind auf Wolke {cloud} {emote}
-love.answers.percent={entity.account1.displayName} und {entity.account2.displayName} lieben sich zu {entity.number}% {emote}
-love.answers.level=Die Liebe <3 zwischen {entity.account1.displayName} und {entity.account2.displayName} ist auf Level {entity.number} {emote}
-love.answers.math=Wäre Liebe eine Summe mit der Laufvariabel {entity.account1.displayName}, dem Startwert 1, dem Endwert 69 und der Funktion {entity.account1.displayName}/{entity.account2.displayName}, wäre das Ergebnis {entity.number} {emote}
+love.answers.cloud={account1} und {account2} sind auf Wolke {cloud} {emote}
+love.answers.percent={account1} und {account2} lieben sich zu {number}% {emote}
+love.answers.level=Die Liebe <3 zwischen {account1} und {account2} ist auf Level {number} {emote}
+love.answers.math=Wäre Liebe eine Summe mit der Laufvariabel {account1}, dem Startwert 1, dem Endwert 69 und der Funktion {account1}/{account2}, wäre das Ergebnis {number} {emote}
 
-love.answers.nope.complicated=Bei {entity.account1.displayName} und {entity.account2.displayName} ist es kompliziert {emote}
-love.answers.nope.not_sparkling=Bei {entity.account1.displayName} und {entity.account2.displayName} funkt es nicht. Schade Schokolade RalpherZ
-love.answers.match.over9000=Die Liebe zwischen {entity.account1.displayName} und {entity.account2.displayName} ist einfach OVER 9000 KAPOW {emote}
-love.answers.match.perfect={entity.account1.displayName} und {entity.account2.displayName} wären das perfekte Paar {emote}
+love.answers.nope.complicated=Bei {account1} und {account2} ist es kompliziert {emote}
+love.answers.nope.not_sparkling=Bei {account1} und {account2} funkt es nicht. Schade Schokolade RalpherZ
+love.answers.match.over9000=Die Liebe zwischen {account1} und {account2} ist einfach OVER 9000 KAPOW {emote}
+love.answers.match.perfect={account1} und {account2} wären das perfekte Paar {emote}
 
-love.error.notfound={sender.displayName}, der Nutzer {args.1} konnte nicht gefunden werden BibleThump
+love.answers.match.staff={account1} und {account2}
+
+love.error.notfound={sender}, der Nutzer {args.1} konnte nicht gefunden werden BibleThump

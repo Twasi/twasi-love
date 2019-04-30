@@ -1,0 +1,15 @@
+syntax={sender} to determine the love between you and a person use !love [name] (second name) <3
+
+love.answers.cloud={account1} and {account2} are on cloud {cloud} {emote}
+love.answers.percent={account1} and {account2} love each other {number}% {emote}
+love.answers.level=The love <3 between {account1} and {account2} is on level {number} {emote}
+love.answers.math=If love were a sum with the variable {account1}, the start value 1, the end value 69 and the function {account1}/{account2}, the result would be {number} {emote}
+
+love.answers.nope.complicated=Between {account1} and {account2} it's complicated {emote}
+love.answers.nope.not_sparkling=Between {account1} and {account2} it's just not working out. What a pity RalpherZ
+love.answers.match.over9000=The love between {account1} and {account2} is simply OVER 9000 KAPOW {emote}
+love.answers.match.perfect={account1} and {account2} would be the perfect match {emote}
+
+love.answers.match.staff={account1} and {account2}
+
+love.error.notfound={sender}, the user {args.1} could not be found BibleThump
